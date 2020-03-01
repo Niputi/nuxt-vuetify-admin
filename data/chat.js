@@ -3,22 +3,22 @@ import { getUser as User } from "./user";
 const Menu = [
   {
     text: "Chat",
-    icon: "chat",
+    icon: "mdi-forum",
     to: { path: "/chat/messaging" }
   },
   {
     text: "Contacts",
-    icon: "contacts",
-    to: { path: "/chat/contact" }
+    icon: "mdi-contacts",
+    to: { path: "/chat/contacts" }
   },
   {
     text: "File",
-    icon: "insert_drive_file",
+    icon: "mdi-file",
     to: { path: "/chat/media" }
   },
   {
     text: "Settings",
-    icon: "settings",
+    icon: "mdi-account-cog",
     to: { path: "/chat/settings" }
   }
 ];

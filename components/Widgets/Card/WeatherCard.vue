@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-img src="/static/people/man/m1.jpg" height="390">
+    <v-responsive src="/static/nature/n5.jpeg" height="350">
       <v-layout column class="media ma-0">
         <v-card-title>
           <v-btn dark icon> <v-icon>chevron_left</v-icon> </v-btn>
@@ -13,17 +13,13 @@
           <div class="display-1 pl-5 pt-5">Ali Conners</div>
         </v-card-title>
       </v-layout>
-    </v-img>
-    <v-list two-line class="pa-0">
+    </v-responsive>
+    <v-list two-line>
       <v-list-item href="#">
-        <v-list-item-action>
-          <v-icon color="indigo">phone</v-icon>
-        </v-list-item-action>
         <v-list-item-content>
-          <v-list-item-title>(650) 555-1234</v-list-item-title>
-          <v-list-item-subtitle>Mobile</v-list-item-subtitle>
+          <v-list-item-title>Monday</v-list-item-title>
+          <!-- <v-list-item-subtitle>Mobile</v-list-item-subtitle> -->
         </v-list-item-content>
-        <v-list-item-action> <v-icon>chat</v-icon> </v-list-item-action>
       </v-list-item>
       <v-list-item href="#">
         <v-list-item-action></v-list-item-action>

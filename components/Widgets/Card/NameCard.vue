@@ -3,11 +3,9 @@
     <v-card ref="card" :color="color" :dark="dark" :img="cardBgImage">
       <v-responsive v-if="showTopNav">
         <v-layout row justify-space-between class="ma-0">
-          <v-flex xs2>
-            <v-icon color="pink">favorite</v-icon>
-          </v-flex>
+          <v-flex xs2> <v-icon color="pink">mdi-heart</v-icon> </v-flex>
           <v-flex xs2 class="text-sm-right">
-            <v-icon>more_vert</v-icon>
+            <v-icon>mdi-dots-vertical</v-icon>
           </v-flex>
         </v-layout>
       </v-responsive>
@@ -26,25 +24,25 @@
         </div>
       </v-card-text>
     </v-card>
-    <v-bottom-nav
+    <v-bottom-navigation
       v-if="showBottomNav"
       :value="true"
       color="transparent"
       :height="64"
     >
-      <v-btn flat color="teal" value="recent">
+      <v-btn text color="teal" value="recent">
         <span>Recent</span>
         <v-icon>history</v-icon>
       </v-btn>
-      <v-btn flat color="teal" value="favorites">
+      <v-btn text color="teal" value="favorites">
         <span>Favorites</span>
-        <v-icon>favorite</v-icon>
+        <v-icon>mdi-heart</v-icon>
       </v-btn>
-      <v-btn flat color="teal" value="nearby">
+      <v-btn text color="teal" value="nearby">
         <span>Nearby</span>
-        <v-icon>place</v-icon>
+        <v-icon>mdi-map-marker</v-icon>
       </v-btn>
-    </v-bottom-nav>
+    </v-bottom-navigation>
   </div>
 </template>
 
@@ -63,9 +61,9 @@ export default {
       type: String,
       default: ""
     },
-    // eslint-disable-next-line vue/require-default-prop
     cardBgImage: {
-      type: String
+      type: String,
+      default: ""
     },
     color: {
       type: String,
@@ -88,6 +86,8 @@ export default {
       default: false
     }
   },
+  data: () => ({}),
+
   computed: {
     computeCardLayout() {
       return this.mini ? "row" : "column";
@@ -113,9 +113,7 @@ export default {
 };
 </script>
 
-<style scoped>
-.caption,
-.subheading {
-  font-weight: 200;
-}
+<style lang="sass" scoped>
+.caption .subheading
+  font-weight:200
 </style>

@@ -21,8 +21,8 @@
 </template>
 
 <script>
-/* eslint-disable vue/require-default-prop */
 export default {
+  /* eslint-disable vue/require-default-prop */
   props: {
     icon: String,
     title: String,

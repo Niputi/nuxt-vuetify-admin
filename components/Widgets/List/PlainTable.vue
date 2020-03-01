@@ -1,48 +1,44 @@
 <template>
   <v-card>
-    <v-toolbar card dense color="transparent">
-      <v-toolbar-title><h4>Project</h4></v-toolbar-title>
+    <v-toolbar text dense color="transparent" elevation="0">
+      <v-toolbar-title>
+        <h4>Project</h4>
+      </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn icon>
-        <v-icon>more_vert</v-icon>
+        <v-icon>mdi-dots-vertical</v-icon>
       </v-btn>
     </v-toolbar>
     <v-divider></v-divider>
     <v-card-text class="pa-0">
-      <template>
-        <v-data-table
-          :headers="headers"
-          :items="projects"
-          hide-actions
-          class="elevation-0"
-        >
-          <template slot="items" slot-scope="props">
-            <td>
-              <v-avatar size="36px">
-                <img :src="props.item.avatar" :alt="props.item.username" />
-              </v-avatar>
-            </td>
-            <td>{{ props.item.name }}</td>
-            <td class="text-xs-left">{{ props.item.deadline }}</td>
-            <td class="text-xs-left">
-              <v-progress-linear
-                :value="props.item.progress"
-                height="5"
-                :color="props.item.color"
-              ></v-progress-linear>
-            </td>
-            <td class="text-xs-right">
-              <v-btn flat icon color="grey">
-                <v-icon>edit</v-icon>
-              </v-btn>
-              <v-btn flat icon color="grey">
-                <v-icon>delete</v-icon>
-              </v-btn>
-            </td>
-          </template>
-        </v-data-table>
-      </template>
-      <v-divider></v-divider>
+      <v-data-table
+        :headers="headers"
+        :items="projects"
+        hide-default-footer
+        class="elevation-0"
+      >
+        <template v-slot:item.avatar="{ item }">
+          <v-avatar>
+            <img :src="item.avatar" alt="avatar" />
+          </v-avatar>
+        </template>
+        <template v-slot:item.progress="{ item }">
+          <v-progress-linear
+            :value="item.progress"
+            height="5"
+            :color="item.color"
+          />
+        </template>
+        <template>
+          <v-btn text icon color="grey">
+            <v-icon>mdi-edit</v-icon>
+          </v-btn>
+          <v-btn text icon color="grey">
+            <v-icon>mdi-delete</v-icon>
+          </v-btn>
+        </template>
+      </v-data-table>
+      <v-divider />
     </v-card-text>
   </v-card>
 </template>

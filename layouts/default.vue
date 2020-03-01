@@ -1,53 +1,49 @@
 <template>
-  <div>
-    <v-app dark>
-      <app-drawer class="app--drawer"></app-drawer>
-      <app-toolbar class="app--toolbar"></app-toolbar>
-      <v-content>
-        <v-container>
-          <nuxt />
-        </v-container>
-      </v-content>
+  <v-app id="inspire" class="app dashboard">
+    <app-drawer class="app--drawer" :show-drawer="showDrawer" />
+    <app-toolbar class="app--toolbar" @side-icon-click="handleDrawerVisiable" />
+    <v-content>
+      <!-- Page Header -->
+      <div class="page-wrapper">
+        <nuxt />
+      </div>
       <!-- App Footer -->
-      <v-footer class="pa-3 app--footer">
-        <span class="caption">
-          Niputi &copy; {{ new Date().getFullYear() }}
-        </span>
-        <v-spacer></v-spacer>
-        <span class="caption mr-1">Make With Love</span>
-        <v-icon color="pink" small>favorite</v-icon>
+      <v-footer height="auto" class="white pa-3 app--footer">
+        <span>Niputi Design &copy; {{ new Date().getFullYear() }}</span>
+        <v-spacer />
+        <span class="caption mr-1">Made With Love</span>
+        <v-icon color="pink" small>mdi-heart</v-icon>
       </v-footer>
-    </v-app>
-  </div>
+    </v-content>
+    <!-- Go to top -->
+    <app-fab />
+  </v-app>
 </template>
 
 <script>
-import AppDrawer from "../components/AppDrawer";
-import AppToolbar from "../components/AppToolbar";
+import AppDrawer from "@/components/AppDrawer";
+import AppToolbar from "@/components/AppToolbar";
+
 export default {
   components: {
     AppDrawer,
     AppToolbar
   },
-  asyncData: () => ({
-    expanded: true,
-    rightDrawer: false,
-    snackbar: {
-      show: false,
-      text: "",
-      color: ""
+  data() {
+    return {
+      showDrawer: true
+    };
+  },
+  created() {},
+  methods: {
+    handleDrawerVisiable() {
+      this.showDrawer = !this.showDrawer;
     }
-  })
+  }
 };
 </script>
 
-<style scoped>
-.setting-fab {
-  top: 50% !important;
-  right: 0;
-  border-radius: 0;
-}
-.page-wrapper {
-  min-height: calc(100vh - 64px - 50px - 81px);
-}
+<style lang="sass" scoped>
+.page-wrapper
+  min-height: calc(100vh - 64px - 50px - 81px)
 </style>

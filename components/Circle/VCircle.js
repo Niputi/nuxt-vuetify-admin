@@ -1,5 +1,6 @@
-import "./VCircle.styl";
-import Colorable from "vuetify/es5/mixins/colorable";
+import "./VCircle.sass";
+ import Colorable from "vuetify/es5/mixins/colorable";
+// import Colorable from "vuetify/lib/mixins/colorable";
 export default {
   mixins: [Colorable],
 
@@ -24,6 +25,7 @@ export default {
         "theme--light": this.light,
         "theme--dark": this.dark
       };
+      classes[this.color] = true;
       return classes;
     }
   },
