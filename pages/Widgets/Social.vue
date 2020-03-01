@@ -36,8 +36,8 @@
 </template>
 
 <script>
-import NameCard from "@/components/widgets/card/NameCard";
-import ProfileCard from "@/components/widgets/card/ProfileCard";
+import NameCard from "@/components/widgets/Card/NameCard";
+import ProfileCard from "@/components/widgets/Card/ProfileCard";
 export default {
   components: {
     NameCard,
