@@ -1,53 +1,43 @@
 <template>
-  <v-container grid-list-xl fluid>
-    <v-layout row wrap>
-      <v-flex sm12>
-        <h4>Mini Name Card</h4>
-      </v-flex>
-      <v-flex v-for="(item, index) in users" :key="'mini' + index" lg3 sm12>
-        <name-card mini v-bind="item"> </name-card>
-      </v-flex>
-      <v-flex sm12>
-        <h4>Basic Name Card</h4>
-      </v-flex>
-      <v-flex v-for="(item, index) in users" :key="'basic' + index" lg3 sm12>
-        <name-card v-bind="item"> </name-card>
-      </v-flex>
-      <v-flex sm12>
-        <h4>Basic Name Card with top nav</h4>
-      </v-flex>
-      <v-flex
-        v-for="(item, index) in users"
-        :key="'basic-top-nav' + index"
-        lg3
-        sm12
-      >
-        <name-card top-nav v-bind="item"> </name-card>
-      </v-flex>
-      <v-flex sm12>
-        <h4>Bottom Nav Name Card</h4>
-      </v-flex>
-      <v-flex
-        v-for="(item, index) in users"
-        :key="'bottom-nav' + index"
-        lg3
-        sm12
-      >
-        <name-card bottom-nav v-bind="item"> </name-card>
-      </v-flex>
-      <v-flex sm12>
-        <h4>Contact Card</h4>
-      </v-flex>
-      <v-flex lg4 sm12>
-        <profile-card></profile-card>
-      </v-flex>
-    </v-layout>
-  </v-container>
+  <div id="social">
+    <v-container grid-list-xl fluid>
+      <v-layout row wrap>
+        <v-flex sm12> <h4>Mini Name Card</h4> </v-flex>
+        <v-flex v-for="(item, index) in users" :key="'mini' + index" lg3 sm12>
+          <name-card mini v-bind="item"></name-card>
+        </v-flex>
+        <v-flex sm12> <h4>Basic Name Card</h4> </v-flex>
+        <v-flex v-for="(item, index) in users" :key="'basic' + index" lg3 sm12>
+          <name-card v-bind="item"></name-card>
+        </v-flex>
+        <v-flex sm12> <h4>Basic Name Card with top nav</h4> </v-flex>
+        <v-flex
+          v-for="(item, index) in users"
+          :key="'basic-top-nav' + index"
+          lg3
+          sm12
+        >
+          <name-card top-nav v-bind="item"></name-card>
+        </v-flex>
+        <v-flex sm12> <h4>Bottom Nav Name Card</h4> </v-flex>
+        <v-flex
+          v-for="(item, index) in users"
+          :key="'bottom-nav' + index"
+          lg3
+          sm12
+        >
+          <name-card bottom-nav v-bind="item"></name-card>
+        </v-flex>
+        <v-flex sm12> <h4>Contact Card</h4> </v-flex>
+        <v-flex lg4 sm12> <profile-card></profile-card> </v-flex>
+      </v-layout>
+    </v-container>
+  </div>
 </template>
 
 <script>
-import NameCard from "@/components/Widgets/Card/NameCard";
-import ProfileCard from "@/components/Widgets/Card/ProfileCard";
+import NameCard from "@/components/widgets/card/NameCard";
+import ProfileCard from "@/components/widgets/card/ProfileCard";
 export default {
   components: {
     NameCard,
@@ -88,7 +78,7 @@ export default {
           jobTitle: "Product Manager",
           name: "John Doe",
           dark: true,
-          cardBgImage: "https://placeimg.com/640/480/nature",
+          cardBgImage: "/static/bg/15.jpg",
           avatar: {
             src: "https://randomuser.me/api/portraits/men/5.jpg",
             size: "36"
