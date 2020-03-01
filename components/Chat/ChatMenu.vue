@@ -1,6 +1,6 @@
 <template>
   <div class="theme--dark py-5 darken-1">
-    <div>
+    <div class="d-flex justify-center">
       <v-btn slot="activator" icon large text>
         <v-avatar>
           <img src="/avatar/man_4.jpg" alt="Michael Wang" />
